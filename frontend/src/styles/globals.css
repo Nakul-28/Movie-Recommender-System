@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-deep-blue text-primary font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+}
+
+@layer components {
+  .card {
+    @apply bg-card-bg border border-accent/10 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply btn bg-dark-bg text-primary hover:bg-accent/10 border border-accent/20;
+  }
+
+  .btn-small {
+    @apply px-3 py-1 text-sm rounded-lg font-medium transition-all;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary/10 text-primary;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent/20 text-accent;
+  }
+
+  .badge-success {
+    @apply badge bg-success/20 text-success;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-card-bg border border-accent/20 rounded-lg text-primary placeholder-secondary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition;
+  }
+
+  .similarity-progress,
+  .probe-progress {
+    @apply w-full bg-dark-bg rounded-full overflow-hidden appearance-none;
+  }
+
+  .similarity-progress.sm {
+    height: 0.25rem;
+  }
+
+  .similarity-progress.md,
+  .probe-progress {
+    height: 0.5rem;
+  }
+
+  .similarity-progress.lg {
+    height: 0.75rem;
+  }
+
+  .similarity-progress::-webkit-progress-bar,
+  .probe-progress::-webkit-progress-bar {
+    @apply bg-dark-bg rounded-full;
+  }
+
+  .similarity-progress::-webkit-progress-value,
+  .probe-progress::-webkit-progress-value {
+    @apply rounded-full transition-all duration-300;
+  }
+
+  .similarity-progress::-moz-progress-bar,
+  .probe-progress::-moz-progress-bar {
+    @apply rounded-full transition-all duration-300;
+  }
+
+  .similarity-progress.tone-danger::-webkit-progress-value,
+  .similarity-progress.tone-danger::-moz-progress-bar {
+    @apply bg-danger;
+  }
+
+  .similarity-progress.tone-warning::-webkit-progress-value,
+  .similarity-progress.tone-warning::-moz-progress-bar {
+    @apply bg-amber-400;
+  }
+
+  .similarity-progress.tone-success::-webkit-progress-value,
+  .similarity-progress.tone-success::-moz-progress-bar {
+    @apply bg-success;
+  }
+
+  .probe-progress::-webkit-progress-value,
+  .probe-progress::-moz-progress-bar {
+    @apply bg-accent;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(99, 102, 241, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(99, 102, 241, 0.5);
+  }
+
+  /* Infinite scrolling poster rows */
+  @keyframes scroll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-right {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .poster-row-left {
+    animation: scroll-left 40s linear infinite;
+    will-change: transform;
+  }
+
+  .poster-row-right {
+    animation: scroll-right 40s linear infinite;
+    will-change: transform;
+  }
+
+  .poster-row-left:hover,
+  .poster-row-right:hover {
+    animation-play-state: paused;
+  }
+}

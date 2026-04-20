@@ -1,0 +1,1 @@
+# dependencies\nnode_modules\n/.pnp\n.pnp.js\n\n# testing\n/.coverage\n/coverage\n\n# next.js\n/.next/\n/out/\n\n# production\n/build\n\n# misc\n.DS_Store\n*.pem\n\n# debug\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# local env files\n.env.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# vercel\n.vercel\n\n# IDE\n.vscode\n.idea\n*.swp\n*.swo\n

@@ -1,0 +1,23 @@
+# Environments
+.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+
+# Data and Models
+*.npy
+sbert_embeddings.npy
+
+# Node modules (if frontend is not a separate repo)
+node_modules/
+frontend/node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
